@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './categories_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('DeliMeals'),
       ),
       body: Center(
-        child: Text('Navigation Time!'),
+        child: CategoriesScreen(),
       ),
     );
   }
