@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './categorie_item.dart';
-import './dummy_data.dart';
+import '../widgets/categorie_item.dart';
+import '../dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
   @override
