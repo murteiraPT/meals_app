@@ -10,14 +10,19 @@ class MealItem extends StatelessWidget {
     switch (myMeal.affordability) {
       case Affordability.Affordable:
         return "Affordable";
+        break;
       case Affordability.Expensive:
         return "Expensive";
+        break;
       case Affordability.Luxurious:
         return "Luxurious";
+        break;
       case Affordability.Pricey:
         return "Pricey";
+        break;
       default:
         return "N/A";
+        break;
     }
   }
 
@@ -25,12 +30,16 @@ class MealItem extends StatelessWidget {
     switch (myMeal.complexity) {
       case Complexity.Challenging:
         return "Challenging";
+        break;
       case Complexity.Hard:
         return "Hard";
+        break;
       case Complexity.Simple:
         return "Simple";
+        break;
       default:
         return "N/A";
+        break;
     }
   }
 
@@ -85,6 +94,7 @@ class MealItem extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(15),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Row(
                     children: <Widget>[
