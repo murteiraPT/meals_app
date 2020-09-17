@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:p3_flutter_course/dummy_data.dart';
+import 'package:p3_flutter_course/screens/category_meals_screen.dart';
 import '../model/meal.dart';
+import '../screens/meal_details_screen.dart';
 
 class MealItem extends StatelessWidget {
-  void selectMeal() {}
-
   final Meal myMeal;
+  final Function addToFavoritesMeal;
 
   String get affordabilityText {
     switch (myMeal.affordability) {
@@ -43,12 +45,27 @@ class MealItem extends StatelessWidget {
     }
   }
 
-  MealItem(this.myMeal);
+  MealItem({
+    @required this.myMeal,
+    @required this.addToFavoritesMeal,
+  });
+
+  void selectMeal(BuildContext context) {
+    Navigator.pushNamed(
+      context,
+      MealDetailsScreen.routeName,
+      arguments: myMeal.id,
+    ).then((value) {
+      if (value != null) {
+        addToFavoritesMeal(value);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMeal,
+      onTap: () => selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
